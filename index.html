@@ -1,62 +1,84 @@
-<!-- ORDEN -->
 <!DOCTYPE html>
-<!-- ETIQUETA HTML CONTENEDORA -->
-<html>
-    
-    <head>
-        <!-- El title es el texto que aparece en la pestaña-->
-        <title>Codigo-G28</title>
-    </head>
-
-    <style>
-        body > * {
-            border: solid 3px green; 
-        }
-    </style>
-
-    <body>
-        <!-- TITULOS -->
-        <h1>Codigo G28 - Frontend</h1>
-        <h2>Titulo 2</h2>
-        <h3>Titulo 3</h3>
-        <h4>Titulo 4</h4>
-        <h5>Titulo 5</h5>
-        <h6>Titulo 6</h6>
-        <!-- PARRAFOS -->
-        <p>Es la etiqueta para contener parrafos</p>
-        <!-- IMAGENES -->
-        
-        <!-- ETIQUETA ANCHOR -->
-        <!-- target="blank" sirve para abrir en nueva pestaña -->
-        <a href="https://www.instagram.com/reel/DJS__W-qxdT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
-            Clip Ackyul  
-        </a>
-        <!-- LISTAS -->
-        <!-- LISTA ORDENADA -->
-        <ol>
-            <li>Casa</li>
-            <li>Perro</li>
-            <li>Celular</li>
-        </ol>
-        <!-- LISTA NO ORDENADA -->
-        <ul>
-            <li>Fresa</li>
-            <li>Pera</li>
-            <li>Manzana</li>
-        </ul>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Menu de navegación header -->
+    <header>
+      <!-- navegacion -->
+      <nav class="menu">
+        <!-- Logo - enlace -->
         <div>
-            <img 
-            src="https://codigo.edu.pe/wp-content/uploads/2023/06/637513271472380d248ff3db_DESARROLLO-DE-VIDEOJUEGOS-p-1600.jpg" 
-            alt="Charla código tecsup" 
-            width="500" 
-            height="400"
-            />
-            <img 
-            src="./foti.png" 
-            alt="Foto"
-            width="500" 
-            height="500" 
-            />
+          <img src="./logo.svg" alt="Logo de portafolio" />
         </div>
-    </body>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About me</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Projects</a>
+          </li>
+          <li>
+            <a href="#">Testimonials</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+        <!-- Listado de items (home, about) -->
+    </nav>
+    </header>
+    <!-- La seccion principal -->
+    <main>
+        <section>
+            <p class="greeting">Hi I am</p>
+            <p class="full-name">Yoshua "Ackyul"</p>
+            <h1 class="title">Main smoker / IGL</h1>
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum voluptate nulla, repellat similique, rem eaque suscipit corrupti nihil reprehenderit itaque incidunt nam vel impedit non deleniti iste dolor repellendus aperiam!
+            </p>
+            <button class="btn-primary">Hire me</button>
+        </section>
+        <section>
+            <div>
+                <img class="profile"
+                    src="./foti.png"
+                    alt="Foto de perfil"
+                />
+            </div>
+            <div class="social-media">
+                <a href="#">
+                    <img src="./facebook.svg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="./instagram.svg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="./twitter.svg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="./linkedin.svg" alt="" />
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- Pie de pagina (footer) -->
+    <footer></footer>
+  </body>
 </html>
