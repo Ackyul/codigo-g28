@@ -6,6 +6,7 @@ import { toast } from "sonner";
 
 function Home() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Definir la función async dentro del useEffect
@@ -14,10 +15,12 @@ function Home() {
 
       if (!ok) {
         toast.error(message);
+        setIsLoading(false);
         return;
       }
 
       setProducts(data);
+      setIsLoading(false);
     };
 
     // Llamar a la función
@@ -29,7 +32,7 @@ function Home() {
       <AppContent>
         {/* Children */}
         <h1 className="text-2xl">Productos</h1>
-        <Products products={products} />
+        <Products products={products} isLoading={isLoading} />
       </AppContent>
     </div>
   );
