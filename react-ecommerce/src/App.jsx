@@ -1,5 +1,5 @@
 import Router from "./router/Router";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "./components/ui/sonner";
 
 function App() {
   return (

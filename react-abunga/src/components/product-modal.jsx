@@ -1,0 +1,117 @@
+import { useState } from "react";
+import { Dialog, DialogContent } from "./ui/dialog";
+import { PRECIOS } from "../lib/constants";
+import { cn } from "../lib/utils";
+import { Button } from "./ui/button";
+import useCartStore from "../stores/useCartStore";
+
+export function ProductModal({ product, isOpen, onClose }) {
+  const [selectedWeight, setSelectedWeight] = useState("50gr");
+  const addToCart = useCartStore((state) => state.addToCart);
+
+  if (!product) return null;
+
+  const getPrice = () => {
+    if (product.tipo === "Fruta" && product.fruta && PRECIOS[product.fruta]) {
+       return PRECIOS[product.fruta][selectedWeight] || product.precio;
+    }
+    // Rollos pricing logic
+    if (product.tipo.includes("Roll")) {
+        if (product.fruta === "Cacao" || product.name.toLowerCase().includes("cacao")) {
+            return 15;
+        }
+        return 10;
+    }
+    return product.precio;
+  };
+
+  const displayPrice = getPrice();
+
+  const handleAddToCart = () => {
+        addToCart({
+          id: product.id,
+          name: product.name,
+          image: product.image,
+          price: displayPrice,
+          brand: product.brand
+      }, 1, selectedWeight);
+      onClose(false);
+  };
+
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-4xl p-0 overflow-hidden bg-white rounded-3xl h-[600px]">
+        <div className="flex h-full">
+          {/* Left: Image */}
+          <div className="w-1/2 bg-gray-50 flex items-center justify-center p-8">
+             <img 
+               src={product.image} 
+               alt={product.name} 
+               className="max-h-full max-w-full object-contain mix-blend-multiply"
+               onError={(e) => { e.target.style.display = 'none'; }} 
+             />
+          </div>
+
+          {/* Right: Details */}
+          <div className="w-1/2 p-8 flex flex-col justify-center space-y-8 relative">
+            <div>
+                <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">{product.brand}</p>
+                <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">{product.name}</h2>
+                <p className="text-gray-500 mt-4 leading-relaxed">
+                    {product.tipo.includes("Roll") 
+                        ? "Deliciosos rollitos de fruta deshidratada 100% natural, sin azúcares añadidos ni conservantes. Perfecta para un snack saludable en cualquier momento del día."
+                        : "Deliciosa fruta deshidratada 100% natural, sin azúcares añadidos ni conservantes. Perfecta para un snack saludable en cualquier momento del día."
+                    }
+                </p>
+            </div>
+
+            {product.tipo === "Fruta" && (
+                <div className="space-y-4">
+                    <p className="text-sm font-bold text-gray-900 uppercase">Selecciona el peso:</p>
+                    <div className="flex gap-4">
+                        <button 
+                            onClick={() => setSelectedWeight("50gr")}
+                            className={cn(
+                                "flex-1 py-4 text-xl font-bold rounded-2xl border-2 transition-all",
+                                selectedWeight === "50gr" 
+                                ? "border-[#95b721] bg-[#95b721] text-white shadow-lg scale-105" 
+                                : "border-gray-200 text-gray-500 hover:border-[#95b721] hover:text-[#95b721]"
+                            )}
+                        >
+                            50gr
+                        </button>
+                        <button 
+                            onClick={() => setSelectedWeight("100gr")}
+                            className={cn(
+                                "flex-1 py-4 text-xl font-bold rounded-2xl border-2 transition-all",
+                                selectedWeight === "100gr" 
+                                ? "border-[#95b721] bg-[#95b721] text-white shadow-lg scale-105" 
+                                : "border-gray-200 text-gray-500 hover:border-[#95b721] hover:text-[#95b721]"
+                            )}
+                        >
+                            100gr
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                <div>
+                     <p className="text-sm font-bold text-gray-500 uppercase mb-1">Precio</p>
+                     <p className="text-5xl font-black text-[#95b721]">S/ {displayPrice}</p>
+                </div>
+            </div>
+            
+             <Button 
+                onClick={handleAddToCart}
+                className="w-full bg-black hover:bg-gray-800 text-white font-bold py-6 text-xl rounded-full shadow-xl"
+             >
+                 Añadir al carrito
+             </Button>
+
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
