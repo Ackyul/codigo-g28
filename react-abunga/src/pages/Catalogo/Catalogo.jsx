@@ -5,8 +5,7 @@ import { Navbar } from "../../components/navbar";
 const Catalogo = () => {
   return (
     <div className="min-h-screen bg-white">
-      <header className="bg-[#95b721] pt-8 pb-12 flex justify-center items-center relative">
-        {/* Logo Image - Left */}
+      <header className="bg-[#95b721] pt-14 pb-12 flex justify-center items-center relative">
         <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-10">
           <img 
             src="/logo-abunga.png" 
@@ -15,9 +14,8 @@ const Catalogo = () => {
           />
         </div>
 
-        {/* Title - Centered */}
         <div className="z-10">
-          <div className="bg-white px-12 py-4 rounded-3xl shadow-md border-2 border-black/10">
+          <div className="bg-white px-12 py-5 rounded-3xl shadow-md border-2 border-black/10">
             <h1 className="text-3xl font-bold tracking-wider text-black uppercase">Catálogo</h1>
           </div>
         </div>
@@ -39,11 +37,9 @@ const Catalogo = () => {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-[#95b721] text-white py-8 mt-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            {/* Brand */}
             <div>
               <h3 className="text-2xl font-['Capriola'] mb-2 text-white">
                 abunga
@@ -51,7 +47,6 @@ const Catalogo = () => {
               <p className="text-sm text-white/80">Snacks naturales de Arequipa</p>
             </div>
 
-            {/* Contact */}
             <div className="text-center">
               <p className="font-semibold mb-2">Contáctanos</p>
               <a href="tel:973391928" className="text-white hover:text-[#e3c561] transition-colors text-lg">
@@ -59,7 +54,6 @@ const Catalogo = () => {
               </a>
             </div>
 
-            {/* Copyright */}
             <div className="text-center md:text-right">
               <p className="text-sm text-white/80">
                 © {new Date().getFullYear()} Abunga

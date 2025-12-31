@@ -12,12 +12,10 @@ function ProductCard({ product }) {
 
   if (!product) return null;
 
-  // Calculate dynamic price if it's a Fruit, otherwise use API price
   const getPrice = () => {
     if (product.tipo === "Fruta" && product.fruta && PRECIOS[product.fruta]) {
        return PRECIOS[product.fruta][selectedWeight] || product.precio;
     }
-    // Rollos pricing logic
     if (product.tipo.includes("Roll")) {
         if (product.fruta === "Cacao" || product.name.toLowerCase().includes("cacao")) {
             return 15;

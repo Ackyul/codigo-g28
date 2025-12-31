@@ -41,7 +41,7 @@ const Cart = () => {
 
             <main className="container mx-auto px-4 py-8 max-w-6xl">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Cart Items */}
+                    {/* Elementos del carrito */}
                     <div className="lg:col-span-2 space-y-6">
                         {cart.map((item) => (
                             <div key={`${item.id}-${item.selectedWeight}`} className="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-sm flex items-center gap-6 relative group overflow-hidden">
@@ -86,7 +86,7 @@ const Cart = () => {
                         ))}
                     </div>
 
-                    {/* Summary */}
+                    {/* Precio total */}
                     <div className="lg:col-span-1">
                         <div className="bg-white p-8 rounded-3xl shadow-lg border-2 border-gray-100 sticky top-4">
                             <h3 className="text-2xl font-extrabold text-gray-900 mb-6">Resumen</h3>

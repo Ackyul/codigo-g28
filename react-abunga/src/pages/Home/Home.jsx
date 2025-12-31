@@ -1,11 +1,9 @@
-import { Link } from "react-router-dom";
 import { Navbar } from "../../components/navbar";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       <header className="bg-[#95b721] pt-8 pb-12 flex justify-center items-center relative">
-        {/* Logo Image - Left */}
         <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-10">
           <img 
             src="/logo-abunga.png" 
@@ -14,7 +12,6 @@ const Home = () => {
           />
         </div>
 
-        {/* Text Logo - Centered */}
         <div className="z-10">
           <div className="bg-white px-12 py-5 rounded-3xl shadow-md">
             <img 
@@ -35,9 +32,7 @@ const Home = () => {
       </header>
       
       <main className="container mx-auto px-4 py-16 max-w-6xl space-y-16">
-        {/* Somos Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Text Content - Left Side */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-[#95b721] mb-8">Somos:</h2>
             <p className="text-xl text-gray-700 leading-relaxed">
@@ -53,20 +48,16 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Image Placeholder - Right Side */}
           <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center">
             <p className="text-gray-400 text-lg">Imagen de fruta deshidratada</p>
           </div>
         </div>
 
-        {/* Mission Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Image Placeholder - Left Side */}
           <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center">
             <p className="text-gray-400 text-lg">Imagen para misión</p>
           </div>
 
-          {/* Mission Text - Right Side */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-[#95b721] mb-8">Nuestra Misión</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -75,9 +66,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Vision Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Vision Text - Left Side */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-[#95b721] mb-8">Nuestra Visión</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -85,18 +74,15 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Image Placeholder - Right Side */}
           <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center">
             <p className="text-gray-400 text-lg">Imagen para visión</p>
           </div>
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-[#95b721] text-white py-8 mt-auto">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            {/* Brand */}
             <div>
               <h3 className="text-2xl font-['Capriola'] mb-2 text-white">
                 abunga
@@ -104,7 +90,6 @@ const Home = () => {
               <p className="text-sm text-white/80">Snacks naturales de Arequipa</p>
             </div>
 
-            {/* Contact */}
             <div className="text-center">
               <p className="font-semibold mb-2">Contáctanos</p>
               <a href="tel:973391928" className="text-white hover:text-[#e3c561] transition-colors text-lg">
@@ -112,7 +97,6 @@ const Home = () => {
               </a>
             </div>
 
-            {/* Copyright */}
             <div className="text-center md:text-right">
               <p className="text-sm text-white/80">
                 © {new Date().getFullYear()} Abunga

@@ -15,7 +15,6 @@ export function ProductModal({ product, isOpen, onClose }) {
     if (product.tipo === "Fruta" && product.fruta && PRECIOS[product.fruta]) {
        return PRECIOS[product.fruta][selectedWeight] || product.precio;
     }
-    // Rollos pricing logic
     if (product.tipo.includes("Roll")) {
         if (product.fruta === "Cacao" || product.name.toLowerCase().includes("cacao")) {
             return 15;
@@ -42,7 +41,7 @@ export function ProductModal({ product, isOpen, onClose }) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl p-0 overflow-hidden bg-white rounded-3xl h-[600px]">
         <div className="flex h-full">
-          {/* Left: Image */}
+          {/* Image */}
           <div className="w-1/2 bg-gray-50 flex items-center justify-center p-8">
              <img 
                src={product.image} 
@@ -52,7 +51,7 @@ export function ProductModal({ product, isOpen, onClose }) {
              />
           </div>
 
-          {/* Right: Details */}
+          {/* Detalles */}
           <div className="w-1/2 p-8 flex flex-col justify-center space-y-8 relative">
             <div>
                 <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">{product.brand}</p>

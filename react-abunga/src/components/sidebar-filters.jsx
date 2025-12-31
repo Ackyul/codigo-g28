@@ -22,7 +22,6 @@ export function SidebarFilters() {
   const availableFruits = filters.types.length === 0 
     ? ALL_FRUITS
     : ALL_FRUITS.filter(fruit => {
-        // Check if any product of the selected types has this fruit
         return products.some(p => 
           filters.types.includes(p.tipo) && p.fruta === fruit
         );
