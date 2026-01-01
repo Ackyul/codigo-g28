@@ -15,7 +15,7 @@ const Catalogo = () => {
           />
         </div>
 
-        <div className="z-10">
+        <div className="z-10 hidden md:block">
           <div className="bg-transparent md:bg-white px-0 md:px-12 py-0 md:py-5 rounded-none md:rounded-3xl shadow-none md:shadow-md border-0 md:border-2 border-black/10">
             <h1 className="text-3xl font-bold tracking-wider text-white md:text-black uppercase">Catálogo</h1>
           </div>

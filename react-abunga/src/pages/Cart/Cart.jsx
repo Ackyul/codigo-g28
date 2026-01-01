@@ -29,8 +29,16 @@ const Cart = () => {
 
     return (
         <div className="min-h-screen bg-white flex flex-col">
-             <header className="bg-[#95b721] pt-6 pb-10 md:pt-8 md:pb-12 flex justify-center items-center relative">
-                <div className="bg-white px-8 py-3 md:px-12 rounded-2xl shadow-sm border-2 border-black/10 z-10 mx-4">
+            <header className="bg-[#95b721] pt-6 pb-10 md:pt-8 md:pb-12 flex flex-row justify-center items-center relative gap-4">
+                <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10">
+                    <img 
+                        src="/logo-abunga.png" 
+                        alt="Abunga Logo" 
+                        className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
+                    />
+                </div>
+
+                <div className="bg-white px-8 py-3 md:px-12 rounded-2xl shadow-sm border-2 border-black/10 z-10 mx-4 hidden md:block">
                     <h1 className="text-2xl md:text-3xl font-bold tracking-wider text-black uppercase text-center">Tu Carrito</h1>
                 </div>
                 

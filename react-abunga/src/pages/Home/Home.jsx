@@ -15,7 +15,7 @@ const Home = () => {
         </div>
 
         <div className="z-10">
-          <div className="bg-white px-12 py-5 rounded-3xl shadow-md">
+          <div className="bg-white px-12 py-5 rounded-3xl shadow-md hidden md:block">
             <img 
               src="/abunga-text.png" 
               alt="Abunga" 
