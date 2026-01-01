@@ -19,7 +19,7 @@ const Home = () => {
             <img 
               src="/abunga-text.png" 
               alt="Abunga" 
-              className="h-16 object-contain"
+              className="h-16 object-contain hidden md:block"
             />
           </div>
         </div>
