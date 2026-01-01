@@ -64,7 +64,7 @@ const Home = () => {
           </div>
 
           <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center md:order-1">
-            <p className="text-gray-400 text-lg">Imagen para misión</p>
+            <img src="/mision.jpg" alt="Misión Abunga" className="w-full h-full object-cover rounded-2xl" />
           </div>
         </div>
 
@@ -77,7 +77,7 @@ const Home = () => {
           </div>
 
           <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center">
-            <p className="text-gray-400 text-lg">Imagen para visión</p>
+            <img src="/vision.jpg" alt="Visión Abunga" className="w-full h-full object-cover rounded-2xl" />
           </div>
         </div>
 

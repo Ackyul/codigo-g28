@@ -22,7 +22,7 @@ export function MobileMixto() {
         </Collapsible.Trigger>
 
         <Collapsible.Content className="border-t border-[#95b721]/20 p-4">
-            <div className="[&>div]:!border-0 [&>div]:!shadow-none [&>div]:p-0 [&>div]:static">
+            <div className="[&>div]:border-0! [&>div]:shadow-none! [&>div]:p-0 [&>div]:static">
                <MixtoBuilder />
             </div>
         </Collapsible.Content>

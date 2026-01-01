@@ -49,7 +49,6 @@ export function MobileFilters() {
         <Collapsible.Content className="border-t border-gray-100">
           <div className="p-4 space-y-6">
             
-            {/* Tipo Section */}
             <div className="space-y-3">
               <h3 className="font-bold text-gray-900 text-base">Tipo</h3>
               <div className="grid grid-cols-2 gap-3">
@@ -76,7 +75,6 @@ export function MobileFilters() {
 
             <div className="h-px bg-gray-100" />
 
-            {/* Fruta Section */}
             <div className="space-y-3">
               <h3 className="font-bold text-gray-900 text-base">Frutas</h3>
               <div className="grid grid-cols-2 gap-3">
