@@ -29,7 +29,7 @@ const Cart = () => {
 
     return (
         <div className="min-h-screen bg-white flex flex-col">
-            <header className="bg-[#95b721] pt-6 pb-10 md:pt-8 md:pb-12 flex flex-row justify-center items-center relative gap-4">
+            <header className="bg-[#95b721] pt-6 pb-10 md:pt-8 md:pb-12 flex flex-row justify-between px-8 md:justify-center items-center relative md:gap-4">
                 <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10">
                     <img 
                         src="/logo-abunga.png" 
