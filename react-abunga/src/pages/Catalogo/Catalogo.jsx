@@ -1,3 +1,4 @@
+import { MobileFilters } from "../../components/mobile-filters";
 import Products from "../../components/products";
 import { SidebarFilters } from "../../components/sidebar-filters";
 import { Navbar } from "../../components/navbar";
@@ -32,7 +33,10 @@ const Catalogo = () => {
 
       <main className="container mx-auto px-4 py-8 max-w-[1400px] grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-3 flex flex-col md:flex-row gap-8">
-          <SidebarFilters />
+          <MobileFilters />
+          <div className="hidden md:block">
+            <SidebarFilters />
+          </div>
           <div className="flex-1">
             <Products />
           </div>
