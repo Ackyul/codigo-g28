@@ -5,7 +5,7 @@ import Footer from "../../components/footer";
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
-      <header className="bg-[#95b721] pt-14 pb-12 flex flex-row justify-between px-8 md:justify-center items-center relative md:gap-0">
+      <header className="bg-[#95b721] pt-8 pb-12 flex flex-row justify-between px-8 md:justify-center items-center relative md:gap-0">
         <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10">
           <img 
             src="/logo-abunga.png" 
