@@ -1,3 +1,4 @@
+import Footer from "../../components/footer";
 import useCartStore from "../../stores/useCartStore";
 import { Link } from "react-router-dom";
 import { Trash2 } from "lucide-react";
@@ -9,22 +10,25 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return (
-            <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
-                <div className="bg-white p-8 rounded-3xl shadow-lg border-2 border-dashed border-gray-300 text-center max-w-md w-full">
-                    <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Tu carrito está vacío</h2>
-                    <p className="text-gray-500 mb-8 text-lg">Parece que aún no has añadido ninguna delicia natural.</p>
-                    <Link to="/catalogo">
-                        <Button className="w-full bg-[#95b721] hover:bg-[#84a31d] text-white font-bold py-4 text-xl rounded-full shadow-md">
-                            Volver al Catálogo
-                        </Button>
-                    </Link>
+            <div className="min-h-screen bg-gray-50 flex flex-col">
+                <div className="flex-1 flex flex-col items-center justify-center p-4">
+                    <div className="bg-white p-8 rounded-3xl shadow-lg border-2 border-dashed border-gray-300 text-center max-w-md w-full">
+                        <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Tu carrito está vacío</h2>
+                        <p className="text-gray-500 mb-8 text-lg">Parece que aún no has añadido ninguna delicia natural.</p>
+                        <Link to="/catalogo">
+                            <Button className="w-full bg-[#95b721] hover:bg-[#84a31d] text-white font-bold py-4 text-xl rounded-full shadow-md">
+                                Volver al Catálogo
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
+                <Footer />
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white flex flex-col">
              <header className="bg-[#95b721] pt-8 pb-12 flex justify-center items-center relative">
                 <div className="bg-white px-12 py-3 rounded-2xl shadow-sm border-2 border-black/10 z-10">
                     <h1 className="text-3xl font-bold tracking-wider text-black uppercase">Tu Carrito</h1>
@@ -39,7 +43,7 @@ const Cart = () => {
                 </div>
             </header>
 
-            <main className="container mx-auto px-4 py-8 max-w-6xl">
+            <main className="container mx-auto px-4 py-8 max-w-6xl flex-grow">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Elementos del carrito */}
                     <div className="lg:col-span-2 space-y-6">
@@ -51,7 +55,12 @@ const Cart = () => {
                                 <div className="flex-1">
                                     <h3 className="font-bold text-xl text-gray-900">{item.name}</h3>
                                     <p className="text-gray-500 text-sm uppercase tracking-wide font-semibold">{item.brand}</p>
-                                    <span className="inline-block mt-1 bg-[#f0fdf4] text-[#95b721] text-xs font-bold px-2 py-1 rounded-md border border-[#95b721]/20">
+                                    {item.fruits && item.fruits.length > 0 && (
+                                        <div className="mt-2 text-sm text-gray-500">
+                                            <span className="font-semibold">Contiene:</span> {item.fruits.join(", ")}
+                                        </div>
+                                    )}
+                                    <span className="inline-block mt-2 bg-[#f0fdf4] text-[#95b721] text-xs font-bold px-2 py-1 rounded-md border border-[#95b721]/20">
                                         {item.selectedWeight}
                                     </span>
                                 </div>
@@ -120,6 +129,7 @@ const Cart = () => {
                     </div>
                 </div>
             </main>
+            <Footer />
         </div>
     );
 };

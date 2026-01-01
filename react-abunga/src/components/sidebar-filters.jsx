@@ -15,8 +15,8 @@ export function SidebarFilters() {
 
   const ALL_FRUITS = [
     "Asaí", "Cacao", "Coco", "Fresa", "Kiwi", "Mango", 
-    "Manzana", "Maracuyá", "Mixto", "Naranja", "Papaya", 
-    "Pera", "Piña", "Platano", "Sandía", "Tamarindo", "Toronja"
+    "Manzana", "Maracuyá", "Naranja", "Papaya", 
+    "Pera", "Piña", "Plátano", "Sandía", "Tamarindo", "Toronja"
   ];
 
   const availableFruits = filters.types.length === 0 
@@ -26,6 +26,8 @@ export function SidebarFilters() {
           filters.types.includes(p.tipo) && p.fruta === fruit
         );
     });
+
+
 
   const handleTypeChange = (value) => {
     setFilter('types', value);
