@@ -5,8 +5,8 @@ import Footer from "../../components/footer";
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
-      <header className="bg-[#95b721] pt-8 pb-12 flex justify-center items-center relative">
-        <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-10">
+      <header className="bg-[#95b721] pt-8 pb-12 flex flex-col md:flex-row justify-center items-center relative gap-6 md:gap-0">
+        <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10">
           <img 
             src="/logo-abunga.png" 
             alt="Abunga Logo" 
@@ -56,15 +56,15 @@ const Home = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center">
-            <p className="text-gray-400 text-lg">Imagen para misión</p>
-          </div>
-
-          <div className="space-y-6">
+          <div className="space-y-6 md:order-2">
             <h2 className="text-4xl font-bold text-[#95b721] mb-8">Nuestra Misión</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               Hacer "retumbar" a los paladares arequipeños con snacks saludables, prácticos y de alta calidad elaborados a base de frutas deshidratadas y sus derivados, en constante innovación, promoviendo hábitos de consumo natural con responsabilidad social y medioambiental, fomentando la economía circular.
             </p>
+          </div>
+
+          <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center md:order-1">
+            <p className="text-gray-400 text-lg">Imagen para misión</p>
           </div>
         </div>
 
