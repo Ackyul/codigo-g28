@@ -1,4 +1,5 @@
 import { MobileFilters } from "../../components/mobile-filters";
+import { MobileMixto } from "../../components/mobile-mixto";
 import Products from "../../components/products";
 import { SidebarFilters } from "../../components/sidebar-filters";
 import { Navbar } from "../../components/navbar";
@@ -33,7 +34,10 @@ const Catalogo = () => {
 
       <main className="container mx-auto px-4 py-8 max-w-[1400px] grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-3 flex flex-col md:flex-row gap-8">
-          <MobileFilters />
+          <div className="w-full md:hidden">
+            <MobileFilters />
+            <MobileMixto />
+          </div>
           <div className="hidden md:block">
             <SidebarFilters />
           </div>
@@ -42,7 +46,7 @@ const Catalogo = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-1 lg:border-l lg:border-[#95b721]/30 lg:pl-8">
+        <div className="hidden lg:block lg:col-span-1 lg:border-l lg:border-[#95b721]/30 lg:pl-8">
           <MixtoBuilder />
         </div>
       </main>
