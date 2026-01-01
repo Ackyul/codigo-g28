@@ -34,7 +34,7 @@ const Cart = () => {
                     <img 
                         src="/logo-abunga.png" 
                         alt="Abunga Logo" 
-                        className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
+                        className="w-28 h-28 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
                     />
                 </div>
 
