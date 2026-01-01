@@ -18,7 +18,6 @@ const useProductStore = create((set, get) => ({
     set({ loading: true, error: null });
     try {
       const data = await fetchProducts();
-      // Shuffle array randomly on fetch
       for (let i = data.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [data[i], data[j]] = [data[j], data[i]];
@@ -52,7 +51,6 @@ const useProductStore = create((set, get) => ({
   getFilteredProducts: () => {
     const { products, filters } = get();
     return products.filter((product) => {
-      // Loose matching for types (e.g. "Rollos" filter matches "Rollitos" type)
       const typeMatch = filters.types.length === 0 || filters.types.some(filterType => {
           if (filterType === "Rollos") return product.tipo.includes("Roll");
           return product.tipo === filterType;

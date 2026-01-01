@@ -45,9 +45,6 @@ const useCartStore = create(
 
       getTotalPrice: () => {
         const { cart } = get();
-        // Calculation assumes product.price is the unit price for the selected weight
-        // Ideally, price should be stored in the cart item at the time of addition to avoid recalculation issues if prices change
-        // For this specific app, we calculated price before adding to cart, so item.price is correct.
         return cart.reduce((total, item) => total + (Number(item.price) * item.quantity), 0);
       },
       
@@ -57,7 +54,7 @@ const useCartStore = create(
       }
     }),
     {
-      name: 'shopping-cart', // unique name
+      name: 'shopping-cart', 
     }
   )
 );

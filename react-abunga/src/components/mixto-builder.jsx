@@ -36,12 +36,11 @@ export function MixtoBuilder() {
             id: `mixto-${Date.now()}`,
             name: "Mixto Fruta Deshidratada",
             price: prices[selectedSize],
-            image: "/logo-abunga.png", // Fallback or specific image
+            image: "/logo-abunga.png", 
             brand: "Abunga",
             fruits: selectedFruits
         };
         addToCart(product, 1, selectedSize);
-        // Reset or notify? keeping it simple for now
         setSelectedFruits([]);
     };
 
@@ -52,7 +51,6 @@ export function MixtoBuilder() {
             </h2>
             
             <div className="bg-gray-100 rounded-xl aspect-square mb-6 flex items-center justify-center border border-gray-200">
-                 {/* Placeholder for dynamic image or generic mixto image */}
                 <p className="text-gray-400 font-medium">Tu Mix Ideal</p>
             </div>
 
