@@ -39,22 +39,21 @@ export function ProductModal({ product, isOpen, onClose }) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl p-0 overflow-hidden bg-white rounded-3xl h-[600px]">
-        <div className="flex h-full">
-          <div className="w-1/2 bg-gray-50 flex items-center justify-center p-8">
+      <DialogContent className="max-w-4xl p-0 bg-white rounded-3xl h-[90vh] md:h-[600px] overflow-y-auto md:overflow-hidden flex flex-col md:flex-row">
+        <div className="w-full md:w-1/2 h-64 md:h-full bg-gray-50 flex items-center justify-center p-8 shrink-0">
              <img 
                src={product.image} 
                alt={product.name} 
                className="max-h-full max-w-full object-contain mix-blend-multiply"
                onError={(e) => { e.target.style.display = 'none'; }} 
              />
-          </div>
+        </div>
 
-          <div className="w-1/2 p-8 flex flex-col justify-center space-y-8 relative">
+        <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center space-y-4 md:space-y-8 relative">
             <div>
-                <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">{product.brand}</p>
-                <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">{product.name}</h2>
-                <p className="text-gray-500 mt-4 leading-relaxed">
+                <p className="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-widest">{product.brand}</p>
+                <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 leading-tight">{product.name}</h2>
+                <p className="text-gray-500 mt-2 md:mt-4 text-xs md:text-base leading-relaxed">
                     {product.tipo.includes("Roll") 
                         ? "Deliciosos rollitos de fruta deshidratada 100% natural, sin azúcares añadidos ni conservantes. Perfecta para un snack saludable en cualquier momento del día."
                         : "Deliciosa fruta deshidratada 100% natural, sin azúcares añadidos ni conservantes. Perfecta para un snack saludable en cualquier momento del día."
@@ -63,13 +62,13 @@ export function ProductModal({ product, isOpen, onClose }) {
             </div>
 
             {product.tipo === "Fruta" && (
-                <div className="space-y-4">
-                    <p className="text-sm font-bold text-gray-900 uppercase">Selecciona el peso:</p>
-                    <div className="flex gap-4">
+                <div className="space-y-2 md:space-y-4">
+                    <p className="text-xs md:text-sm font-bold text-gray-900 uppercase">Selecciona el peso:</p>
+                    <div className="flex gap-2 md:gap-4">
                         <button 
                             onClick={() => setSelectedWeight("50gr")}
                             className={cn(
-                                "flex-1 py-4 text-xl font-bold rounded-2xl border-2 transition-all",
+                                "flex-1 py-2 md:py-4 text-sm md:text-xl font-bold rounded-xl md:rounded-2xl border-2 transition-all",
                                 selectedWeight === "50gr" 
                                 ? "border-[#95b721] bg-[#95b721] text-white shadow-lg scale-105" 
                                 : "border-gray-200 text-gray-500 hover:border-[#95b721] hover:text-[#95b721]"
@@ -80,7 +79,7 @@ export function ProductModal({ product, isOpen, onClose }) {
                         <button 
                             onClick={() => setSelectedWeight("100gr")}
                             className={cn(
-                                "flex-1 py-4 text-xl font-bold rounded-2xl border-2 transition-all",
+                                "flex-1 py-2 md:py-4 text-sm md:text-xl font-bold rounded-xl md:rounded-2xl border-2 transition-all",
                                 selectedWeight === "100gr" 
                                 ? "border-[#95b721] bg-[#95b721] text-white shadow-lg scale-105" 
                                 : "border-gray-200 text-gray-500 hover:border-[#95b721] hover:text-[#95b721]"
@@ -92,21 +91,20 @@ export function ProductModal({ product, isOpen, onClose }) {
                 </div>
             )}
 
-            <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+            <div className="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
                 <div>
-                     <p className="text-sm font-bold text-gray-500 uppercase mb-1">Precio</p>
-                     <p className="text-5xl font-black text-[#95b721]">S/ {displayPrice}</p>
+                     <p className="text-xs md:text-sm font-bold text-gray-500 uppercase mb-1">Precio</p>
+                     <p className="text-3xl md:text-5xl font-black text-[#95b721]">S/ {displayPrice}</p>
                 </div>
             </div>
             
              <Button 
                 onClick={handleAddToCart}
-                className="w-full bg-black hover:bg-gray-800 text-white font-bold py-6 text-xl rounded-full shadow-xl"
+                className="w-full bg-black hover:bg-gray-800 text-white font-bold py-4 md:py-6 text-lg md:text-xl rounded-full shadow-xl"
              >
                  Añadir al carrito
              </Button>
 
-          </div>
         </div>
       </DialogContent>
     </Dialog>
