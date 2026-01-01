@@ -6,18 +6,18 @@ import { MixtoBuilder } from "../../components/mixto-builder";
 const Catalogo = () => {
   return (
     <div className="min-h-screen bg-white">
-      <header className="bg-[#95b721] pt-12 pb-14 flex flex-col md:flex-row justify-center items-center relative gap-6 md:gap-0">
+      <header className="bg-[#95b721] pt-12 pb-14 flex flex-row justify-center items-center relative gap-4">
         <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10">
           <img 
             src="/logo-abunga.png" 
             alt="Abunga Logo" 
-            className="w-28 h-28 rounded-full object-cover shadow-lg"
+            className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
           />
         </div>
 
         <div className="z-10">
-          <div className="bg-white px-12 py-5 rounded-3xl shadow-md border-2 border-black/10">
-            <h1 className="text-3xl font-bold tracking-wider text-black uppercase">Catálogo</h1>
+          <div className="bg-transparent md:bg-white px-0 md:px-12 py-0 md:py-5 rounded-none md:rounded-3xl shadow-none md:shadow-md border-0 md:border-2 border-black/10">
+            <h1 className="text-3xl font-bold tracking-wider text-white md:text-black uppercase">Catálogo</h1>
           </div>
         </div>
         
