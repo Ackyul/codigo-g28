@@ -11,6 +11,25 @@ const Cart = () => {
     if (cart.length === 0) {
         return (
             <div className="min-h-screen bg-gray-50 flex flex-col">
+                <header className="bg-[#95b721] pt-8 pb-12 md:pt-14 md:pb-16 flex flex-row justify-between px-8 md:justify-center items-center relative md:gap-4">
+                    <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10 shrink-0">
+                        <img 
+                            src="/logo-abunga.png" 
+                            alt="Abunga Logo" 
+                            className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
+                        />
+                    </div>
+                    <div className="bg-white px-8 py-3 md:px-12 rounded-2xl shadow-sm border-2 border-black/10 z-10 mx-4 hidden md:block">
+                        <h1 className="text-2xl md:text-3xl font-bold tracking-wider text-black uppercase text-center">Tu Carrito</h1>
+                    </div>
+                    <Navbar />
+                    <div className="absolute bottom-0 left-0 right-0 flex flex-col">
+                        <div className="h-2 bg-[#e24052]"></div>
+                        <div className="h-2 bg-[#d08635]"></div>
+                        <div className="h-2 bg-[#e3c561]"></div>
+                    </div>
+                </header>
+
                 <div className="flex-1 flex flex-col items-center justify-center p-4">
                     <div className="bg-white p-8 rounded-3xl shadow-lg border-2 border-dashed border-gray-300 text-center max-w-md w-full">
                         <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Tu carrito está vacío</h2>
@@ -29,12 +48,12 @@ const Cart = () => {
 
     return (
         <div className="min-h-screen bg-white flex flex-col">
-            <header className="bg-[#95b721] pt-8 pb-12 md:pt-8 md:pb-12 flex flex-row justify-between px-8 md:justify-center items-center relative md:gap-4">
-                <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10">
+            <header className="bg-[#95b721] pt-8 pb-12 md:pt-16 md:pb-14 flex flex-row justify-between px-8 md:justify-center items-center relative md:gap-4">
+                <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10 shrink-0">
                     <img 
                         src="/logo-abunga.png" 
                         alt="Abunga Logo" 
-                        className="w-28 h-28 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
+                        className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
                     />
                 </div>
 
@@ -55,11 +74,11 @@ const Cart = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div className="lg:col-span-2 space-y-6">
                         {cart.map((item) => (
-                            <div key={`${item.id}-${item.selectedWeight}`} className="bg-white p-6 md:p-8 rounded-3xl border-2 border-gray-100 shadow-sm flex flex-col md:flex-row items-center gap-6 relative group overflow-hidden">
-                                <div className="h-32 w-32 md:h-24 md:w-24 shrink-0 bg-gray-50 rounded-xl p-2">
+                            <div key={`${item.id}-${item.selectedWeight}`} className="bg-white p-4 md:p-8 rounded-3xl border-2 border-gray-100 shadow-sm flex flex-row items-center gap-4 relative group overflow-hidden">
+                                <div className="h-20 w-20 md:h-24 md:w-24 shrink-0 bg-gray-50 rounded-xl p-2">
                                      <img src={item.image} alt={item.name} className="h-full w-full object-contain" onError={(e) => { e.target.style.display = 'none'; }} />
                                 </div>
-                                <div className="flex-1 text-center md:text-left w-full md:w-auto">
+                                <div className="flex-1 text-left w-auto">
                                     <h3 className="font-bold text-xl text-gray-900">{item.name}</h3>
                                     <p className="text-gray-500 text-sm uppercase tracking-wide font-semibold">{item.brand}</p>
                                     {item.fruits && item.fruits.length > 0 && (
@@ -72,7 +91,7 @@ const Cart = () => {
                                     </span>
                                 </div>
                                 
-                                <div className="flex flex-col items-center md:items-end gap-2 w-full md:w-auto md:mr-12">
+                                <div className="flex flex-col items-end gap-2 w-auto md:mr-12">
                                     <p className="font-black text-2xl text-[#95b721]">S/ {(item.price * item.quantity).toFixed(2)}</p>
                                     <div className="flex items-center gap-3 bg-gray-100 rounded-full p-1">
                                         <button 

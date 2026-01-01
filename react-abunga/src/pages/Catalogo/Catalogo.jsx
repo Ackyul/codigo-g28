@@ -7,11 +7,11 @@ const Catalogo = () => {
   return (
     <div className="min-h-screen bg-white">
       <header className="bg-[#95b721] pt-8 pb-12 md:pt-14 md:pb-12 flex flex-row justify-between px-8 md:justify-center items-center relative md:gap-4">
-        <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10">
+        <div className="relative md:absolute md:left-8 md:top-1/2 md:transform md:-translate-y-1/2 z-10 shrink-0">
           <img 
             src="/logo-abunga.png" 
             alt="Abunga Logo" 
-            className="w-28 h-28 rounded-full object-cover shadow-lg"
+            className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
           />
         </div>
 
