@@ -91,20 +91,20 @@ const Cart = () => {
                                     </span>
                                 </div>
                                 
-                                <div className="flex flex-col items-end gap-2 w-auto md:mr-12">
-                                    <p className="font-black text-2xl text-[#95b721]">S/ {(item.price * item.quantity).toFixed(2)}</p>
+                                <div className="flex flex-col items-end gap-2 w-auto md:mr-12 mt-8 md:mt-0 ml-auto">
+                                    <p className="font-black text-lg md:text-2xl text-[#95b721]">S/ {(item.price * item.quantity).toFixed(2)}</p>
                                     <div className="flex items-center gap-3 bg-gray-100 rounded-full p-1">
                                         <button 
                                             onClick={() => updateQuantity(item.id, item.selectedWeight, item.quantity - 1)}
-                                            className="h-8 w-8 flex items-center justify-center bg-white rounded-full shadow-sm font-bold hover:bg-gray-50 disabled:opacity-50"
+                                            className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center bg-white rounded-full shadow-sm font-bold hover:bg-gray-50 disabled:opacity-50 text-xs md:text-base"
                                             disabled={item.quantity <= 1}
                                         >
                                             -
                                         </button>
-                                        <span className="font-bold text-lg w-4 text-center">{item.quantity}</span>
+                                        <span className="font-bold text-sm md:text-lg w-4 text-center">{item.quantity}</span>
                                         <button 
                                             onClick={() => updateQuantity(item.id, item.selectedWeight, item.quantity + 1)}
-                                            className="h-8 w-8 flex items-center justify-center bg-white rounded-full shadow-sm font-bold hover:bg-gray-50"
+                                            className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center bg-white rounded-full shadow-sm font-bold hover:bg-gray-50 text-xs md:text-base"
                                         >
                                             +
                                         </button>
