@@ -16,7 +16,7 @@ const Cart = () => {
                         <img 
                             src="/logo-abunga.png" 
                             alt="Abunga Logo" 
-                            className="w-16 h-16 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
+                            className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
                         />
                     </div>
                     <div className="bg-white px-8 py-3 md:px-12 rounded-2xl shadow-sm border-2 border-black/10 z-10 mx-4 hidden md:block">
@@ -53,7 +53,7 @@ const Cart = () => {
                     <img 
                         src="/logo-abunga.png" 
                         alt="Abunga Logo" 
-                        className="w-16 h-16 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
+                        className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
                     />
                 </div>
 

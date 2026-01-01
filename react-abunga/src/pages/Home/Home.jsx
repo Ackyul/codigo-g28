@@ -10,7 +10,7 @@ const Home = () => {
           <img 
             src="/logo-abunga.png" 
             alt="Abunga Logo" 
-            className="w-16 h-16 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
+            className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover shadow-lg"
           />
         </div>
 
