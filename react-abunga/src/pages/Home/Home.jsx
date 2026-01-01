@@ -51,7 +51,7 @@ const Home = () => {
           </div>
 
           <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center">
-            <p className="text-gray-400 text-lg">Imagen de fruta deshidratada</p>
+            <img src="/frutas-home.jpg" alt="Fruta Deshidratada" className="w-full h-full object-cover rounded-2xl" />
           </div>
         </div>
 
