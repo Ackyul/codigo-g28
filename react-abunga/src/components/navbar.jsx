@@ -13,7 +13,7 @@ export function Navbar() {
   ];
 
   return (
-    <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex items-center gap-4">
+    <div className="relative md:absolute md:right-8 md:top-1/2 md:transform md:-translate-y-1/2 flex items-center gap-4 mt-6 md:mt-0">
       {navLinks.map((link) => (
         <Link
           key={link.path}
