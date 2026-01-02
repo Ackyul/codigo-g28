@@ -24,13 +24,25 @@ const useProductStore = create((set, get) => ({
       }
       
       data = data.map(p => {
-        if (p.fruta === 'Mango' && p.tipo === 'Fruta') {
-           return { ...p, image: '/mango.png' };
+        let newImage = p.image;
+
+        if (p.tipo === 'Fruta') {
+            if (p.fruta === 'Piña') newImage = '/f-pina.png';
+            else if (p.fruta === 'Mango') newImage = '/f-mango.png';
+            else if (p.fruta === 'Manzana') newImage = '/f-manzana.png';
+        } else if (p.tipo.includes('Roll')) {
+             if (p.fruta === 'Asaí' || p.name.toLowerCase().includes('acai')) newImage = '/r-acai.png'; 
+             else if (p.fruta === 'Maracuyá') newImage = '/r-maracuya.png';
+             else if (p.fruta === 'Cacao') newImage = '/r-cacao.png';
+             else if (p.fruta === 'Coco') newImage = '/r-coco.png';
+             else if (p.fruta === 'Fresa') newImage = '/r-fresa.png';
+             else if (p.fruta === 'Sandía') newImage = '/r-sandia.png';
+             else if (p.fruta === 'Tamarindo') newImage = '/r-tamarindo.png';
+             else if (p.fruta === 'Papaya') newImage = '/r-papaya.png';
+             else if (p.fruta === 'Piña') newImage = '/r-pina.png';
         }
-        if (p.fruta === 'Manzana' && p.tipo === 'Fruta') {
-           return { ...p, image: '/manzana.png' };
-        }
-        return p;
+
+        return { ...p, image: newImage };
       });
 
       set({ products: data, loading: false });
