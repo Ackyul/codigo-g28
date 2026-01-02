@@ -23,7 +23,6 @@ const useProductStore = create((set, get) => ({
         [data[i], data[j]] = [data[j], data[i]];
       }
       
-      // Override Mango and Manzana images locally
       data = data.map(p => {
         if (p.fruta === 'Mango' && p.tipo === 'Fruta') {
            return { ...p, image: '/mango.png' };
