@@ -17,11 +17,23 @@ const useProductStore = create((set, get) => ({
   getProducts: async () => {
     set({ loading: true, error: null });
     try {
-      const data = await fetchProducts();
+      let data = await fetchProducts();
       for (let i = data.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [data[i], data[j]] = [data[j], data[i]];
       }
+      
+      // Override Mango and Manzana images locally
+      data = data.map(p => {
+        if (p.fruta === 'Mango' && p.tipo === 'Fruta') {
+           return { ...p, image: '/mango.png' };
+        }
+        if (p.fruta === 'Manzana' && p.tipo === 'Fruta') {
+           return { ...p, image: '/manzana.png' };
+        }
+        return p;
+      });
+
       set({ products: data, loading: false });
     } catch (error) {
       set({ error: error.message, loading: false });
